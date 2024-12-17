@@ -97,6 +97,9 @@ def _linear_to_mel(spectogram):
 
 def _build_mel_basis():
     assert hp.fmax <= hp.sample_rate // 2
+    # return librosa.filters.mel(hp.sample_rate, hp.n_fft, n_mels=hp.num_mels,
+    #                        fmin=hp.mel_fmin, fmax=hp.mel_fmax)
+    #  above is for latest one
     return librosa.filters.mel(hp.sample_rate, hp.n_fft, n_mels=hp.num_mels,
                                fmin=hp.fmin, fmax=hp.fmax)
 
